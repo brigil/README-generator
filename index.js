@@ -4,7 +4,16 @@ const fs = require("fs");
 const generateMd = require("./utils/generateMarkdown");
 // passing the questions for the user 
 inquirer.prompt([
-    //array of questions
+    {
+        type:"input",
+        message:"What is your Github username?",
+        name:"Username"
+    },
+    {
+        type:"input",
+        message:"What is your email address?",
+        name:"Email"
+    },
     {
        type:"input",
        message:"What is the title of your project?",
@@ -16,9 +25,15 @@ inquirer.prompt([
         name:"Description"
     }, 
     {
+        type: "input",
+        message: "Enter Table of Contents",
+        name: "Contents"
+    },
+    {
         type:"input",
         message:"What are the steps required to install your project?",
-        name:"Installation"
+        name:"Installation",
+        default: "npm i"
     }, 
     {
         type:"input",
@@ -45,29 +60,34 @@ inquirer.prompt([
         type:"input",
         message:"what command should be run to run tests?",
         name:"Test"
-    },
-    {
-        type:"input",
-        message:"What is your Github username?",
-        name:"Username"
-    },
-    {
-        type:"input",
-        message:"What is your email address?",
-        name:"Email"
-    }
-    
+    }   
 ])
-.then(function(answers) {
-    // console.log(answers);
-     const generatedFile = generateMd(answers)
 
-    console.log(generatedFile);
-  })
-//   .catch(error => {
-//     if(error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else when wrong
-//     }
-//   });
+.then(function (answers) {
+
+    let licenseURL;
+
+        if (answers.license === "GNU GPLv3") {
+            licenseURL = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+        }
+        if (answers.license === "MIT") {
+            licenseURL = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+        }
+        if (answers.license === "Apache") {
+            licenseURL = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+        }  
+        if (answers.license === "ISC") {
+                licenseURL = "[![License](https://img.shields.io/badge/License-ISC%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)"
+    
+        }
+
+    let File = "README-2.md"; 
+
+    fs.writeFile(File, generateMd(answers), function(err){
+        if (err) {
+            return console.log(err)
+        }
+        // console.log("it works!")
+    })
+    });
+

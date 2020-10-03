@@ -1,9 +1,9 @@
 
 
-  # etr
+  # README.generator
 
   ## Description 
-  eth4b
+  using node.js to generate a readMe file inside the terminal.
 
   ### Table of Contents
 
@@ -14,7 +14,7 @@
 
 
 ### Installation
-n53rgv
+run npm i 
 
 
 ### Usage 
@@ -22,7 +22,7 @@ n53rgv
 
 
 ### Credits
-rgb
+there were none
 
 
 
@@ -30,16 +30,16 @@ rgb
 
 
 ### License
-ISC
+
 
 
 ### Tests
 
-rb
+none
 
 
 Email : 
-etn<br>
+urbrigette@gmail.com<br>
 Github : https://github.com/undefined
 
 © 2020 brigil Inc. All Rights Reserved.
