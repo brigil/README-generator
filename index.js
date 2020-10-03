@@ -9,6 +9,36 @@ inquirer.prompt([
        message:"What is the title of your project?",
        name:"Title"
     },
+    {
+        type:"input",
+        message:"Give a well-crafted description ",
+        name:"Description"
+    }, 
+    {
+        type:"input",
+        message:"",
+        name:""
+    }, 
+    {
+        type:"input",
+        message:"",
+        name:""
+    }, 
+    {
+        type:"input",
+        message:"",
+        name:""
+    }, 
+    {
+        type:"input",
+        message:"",
+        name:""
+    }, 
+    {
+        type:"input",
+        message:"",
+        name:""
+    }, 
 ])
 .then(answers => {
     // Use user feedback for... whatever!!
