@@ -49,7 +49,7 @@ inquirer.prompt([
         type:"checkbox",
         message:"Please select a license for your project.",
         choices:[
-            "apache",
+            "Apache",
             "MIT",
             "ISC",
             "GNJ GPLv3"
@@ -59,31 +59,32 @@ inquirer.prompt([
     {
         type:"input",
         message:"what command should be run to run tests?",
-        name:"Test"
+        name:"Test",
+        default: "npm test"
     }   
 ])
 
 .then(function (answers) {
 
-    let licenseURL;
-
+    let licenseKind;
+// license badges
         if (answers.license === "GNU GPLv3") {
-            licenseURL = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+            licenseKind = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
         }
         if (answers.license === "MIT") {
-            licenseURL = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+            licenseKind = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
         }
         if (answers.license === "Apache") {
-            licenseURL = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+            licenseKind = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
         }  
         if (answers.license === "ISC") {
-                licenseURL = "[![License](https://img.shields.io/badge/License-ISC%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)"
+            licenseKind = "[![License](https://img.shields.io/badge/License-ISC%202.0-yellow.svg)](https://opensource.org/licenses/ISC-2.0)"
     
         }
+// create new readme name readme2
+    let File = "README.md"; 
 
-    let File = "README-2.md"; 
-
-    fs.writeFile(File, generateMd(answers), function(err){
+    fs.writeFile(File, generateMd(answers, licenseKind), function(err){
         if (err) {
             return console.log(err)
         }

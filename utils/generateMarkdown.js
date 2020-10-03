@@ -1,5 +1,5 @@
 // function to generate markdown for README
-function generateMd(answers, licenseURL) {
+function generateMd(answers, licenseKind) {
   return `
 
   # ${answers.Title}
@@ -33,7 +33,8 @@ ${answers.Credits}
 
 ### License
 ${answers.License}
-${licenseURL}
+
+${licenseKind}
 
 
 ### Tests
