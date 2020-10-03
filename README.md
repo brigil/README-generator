@@ -21,6 +21,8 @@ After creating a README file, run node index.js in the Application directory
 ### Usage 
 use node index.js
 
+<img src="https://media.giphy.com/media/31adhee7QYhE0ymcgK/giphy.gif">
+
 
 ### Credits
 Brigitte Gil
@@ -33,16 +35,13 @@ Brigitte Gil
 ### License
 MIT
 
-undefined
-
 
 ### Tests
 
 npm test
 
 
-Email : 
-urbrigette@gmail.com
+Email : urbrigette@gmail.com
 Github : https://github.com/brigil
 
 © 2020 brigil Inc. All Rights Reserved.

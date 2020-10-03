@@ -82,7 +82,7 @@ inquirer.prompt([
     
         }
 // create new readme name readme2
-    let File = "README.md"; 
+    let File = "README2.md"; 
 
     fs.writeFile(File, generateMd(answers, licenseKind), function(err){
         if (err) {
