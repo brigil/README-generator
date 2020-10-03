@@ -5,6 +5,17 @@ const generateMd = require("./utils/generateMarkdown");
 // passing the questions for the user 
 inquirer.prompt([
     {
+        type:"input",
+        message:"What is your Github username?",
+        name:"Username"
+    },
+    {
+        type:"input",
+        message:"What is your email address?",
+        name:"Email"
+    },
+
+    {
        type:"input",
        message:"What is the title of your project?",
        name:"Title"
