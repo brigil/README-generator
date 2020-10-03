@@ -22,33 +22,39 @@ inquirer.prompt([
     },
     {
         type:"input",
-        message:"Give a well-crafted description ",
+        message:"Please give a description for your project ",
         name:"Description"
     }, 
     {
         type:"input",
-        message:"",
-        name:""
+        message:"What are the steps required to install your project?",
+        name:"Installation"
     }, 
     {
         type:"input",
-        message:"",
-        name:""
+        message:"Provide instructions and examples for use.",
+        name:"Usage"
     }, 
     {
         type:"input",
-        message:"",
-        name:""
+        message:"Please select a license for your project.",
+        choices:[
+            "apache",
+            "MIT",
+            "ISC",
+            "GNJ GPLv3"
+        ],
+        name:"License"
     }, 
     {
         type:"input",
-        message:"",
-        name:""
+        message:"what command should be run to run tests?",
+        name:"Test"
     }, 
     {
         type:"input",
-        message:"",
-        name:""
+        message:"Who contributed on this project?",
+        name:"Contribution"
     }, 
 ])
 .then(answers => {
